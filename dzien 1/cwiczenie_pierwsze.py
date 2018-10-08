@@ -21,3 +21,5 @@ a = int(input('Podaj bok a')) #input daje str
 b = int(input('Podaj bok b'))
 pole_prostokata = a * b
 print(f"Pole prostokata o bokach {a}, {b} wynosi: {a*b}")
+
+print(f"Pole prostokata o bokach {a}, {b} wynosi: {a*b}")

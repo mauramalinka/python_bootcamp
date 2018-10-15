@@ -8,7 +8,10 @@ while True:
         x += dane
         i += 1
         srednia = x / i
+        print(f"Srednia T = {srednia}")
     else:
+
+        print(f"Nie wprowadzilesw liczb")
         break
-print(f"Srednia T = {srednia}")
+#print(f"Srednia T = {srednia}")
 

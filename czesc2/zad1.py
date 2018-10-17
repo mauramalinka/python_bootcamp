@@ -5,3 +5,6 @@ print(f"{x[-2]}")
 print(f"{x[2:7]}")
 print(f"{x[::3]}")
 print(f"{x[::-2]}")
+
+pusta_tupla = ()
+jeden_el = (4,)

@@ -4,10 +4,11 @@
 
 for i in range(10):
     for j in range(10):
-        x = i
-        y = j
         w = i * j
-        print(f"{w:3}", end = " ")
+        if j == 9:
+            print(f"{w:3}", end = "\n ")
+        else:
+            print(f"{w:3}", end=" ")
         #print(x)
         #print(y)
 

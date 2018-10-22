@@ -1,14 +1,19 @@
 
 #lista = list(range(10))
 #range = range(10)
+print(" ", end="")
+for x in range(10):
+    print(f"{x:3}", end="" )
 
-for i in range(10):
-    for j in range(10):
-        w = i * j
-        if j == 9:
-            print(f"{w:3}", end = "\n ")
-        else:
-            print(f"{w:3}", end=" ")
+print()
+print()
+
+for x in range(10):
+    print(x, end="")
+    for y in range(10):
+        print(f"{x * y:3}", end="")
+
+    print()
         #print(x)
         #print(y)
 

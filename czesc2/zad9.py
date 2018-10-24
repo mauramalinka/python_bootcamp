@@ -1,28 +1,45 @@
 slownik = {"woda":2, "ziemniaki":3.5, "pomidory":20}
+total = 0
 
-print(f" W naszym sklepie oferujemy:")
-for x in slownik:
-    print(f" - {x} - w cenie: {slownik[x]} PLN")
+koszyk = {}
 
-produkty = input("Podaj produkty jakie kupiles: woda, ziemniaki czy pomidory: ")
-x  = int(input("Podaj ich mase: "))
+magazyn  = {"woda":10, "ziemniaki":10, "pomidory":10}
 
-for k in slownik:
-    if k == produkty:
-        print({slownik[k] * x})
+while True:
+    komenda = input("""Wybierz opcje: 
+               [d] - dodaj do magazynu
+               [k] - kup
+               [z] - zakoncz""")
+    if komenda == "k":
+        print(f" W naszym sklepie oferujemy:")
+        for x in slownik:
+            print(f" - {x} - w cenie: {slownik[x]} PLN")
+        produkty = input("Podaj produkty jakie chcesz kupić: woda, ziemniaki czy pomidory: ")
+        if produkty == "Koniec":
+            break
+        if produkty in slownik:
+            x = int(input("Podaj ich mase: "))
+            if x <= magazyn[produkty]:
+            #cena = slownik[produkty] * x
+            koszyk[produkty] = x
+            magazyn[produkty] -= x
+         else:
+            print(f"Brak produktu [magazyn{produkty}]")
+        print()
 
-produkty = input("Czy cos jeszcze: woda, ziemniaki czy pomidory: ")
-y  = int(input("Podaj ich mase: "))
+        for produkty in koszyk:
+            print(f"Twój rachunek - {produkty}: koszyk[produkty]")
+            cena = koszyk[produkty] * slownik[produkty]
+            total += cena
+            print(f"{total}")
+            print("Zapraszamy ponownie")
 
-for k in slownik:
-    if k == produkty:
-        print({slownik[k] * y})
-
-produkty = input("Czy cos jeszcze: woda, ziemniaki czy pomidory: ")
-z  = int(input("Podaj ich mase: "))
-
-for k in slownik:
-    if k == produkty:
-        print({slownik[k] * z})
-
-print(f"Zaplac: {slownik[k] * x} + {slownik[k] * x} + {slownik[k] * x}" )
+    elif komenda == "d"
+        co = input(f"Podaj")
+        ile = int(input(f"ile"))
+        magazyn[co] = magazyn.get(co,0) + x
+        if co not in slownik:
+            cena = float(input(f'Jaka cena za {co}'))
+            produkty[co] = x
+    elif komenda = "z":
+        print(f"Koniec")

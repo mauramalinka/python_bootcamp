@@ -1,6 +1,6 @@
 slownik = {"woda":2, "ziemniaki":3.5, "pomidory":20}
 
-print(f" W naszym sklepie oferujemy")
+print(f" W naszym sklepie oferujemy:")
 for x in slownik:
     print(f" - {x} - w cenie: {slownik[x]} PLN")
 

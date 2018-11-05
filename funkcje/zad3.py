@@ -1,5 +1,8 @@
+tekst = input("Podaj napis z jednym nawiasem <>: ")
+
 def policz_znaki(tekst, start="<", end=">"):
-    return tekst.count(tekst)
+    wynik = tekst.count(tekst)
+    return wynik
 
 def test_pilicz_znaki_bez_znacznikow():
     assert policz_znaki("ala ma kota") == 0
@@ -12,3 +15,4 @@ def test_pilicz_nie_standardoweznacznik_znacznikow():
 
 def test_pilicz_nie_standardoweznacznik_znacznikow():
     assert policz_znaki("a <a<a<a>>>") == 6
+

@@ -1,12 +1,10 @@
 from zad1 import Produkt
 
-
-
 class Basket():
 
     def add_produkt(self, produkt, n):
-        self.produkt. Produkt()
-        self.produkt = produkt
+        koszyk = []
+        koszyk.append(produkt)
         self.n = n
 
     def count_total_price(self, price):

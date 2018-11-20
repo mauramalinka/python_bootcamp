@@ -38,8 +38,8 @@ class Postac:
     @staticmethod
     def fight(atakujacy, broniacy):
         while atakujacy.zdrowie > 0 and broniacy.zdrowie > 0:
-            print{atakujacy}
-            print{broniacy}
+            print(atakujacy)
+            print(broniacy)
             atakujacy_atak = atakujacy.moc_ataku()
             broniacy_atak = broniacy.moc_ataku()
             print(f"Walka: {atakujacy.imie} vs {broniacy.imie}")
@@ -51,7 +51,7 @@ class Postac:
 
 
     def daj_przedmiot(self, przedmiot):
-        self.ekwipunek.append
+        return self.ekwipunek.append
 
 rufus = Postac("Rufus", 30, 100)
 #rufus.walka(90)
@@ -64,10 +64,13 @@ rufus = Postac("Rufus", 30, 100)
 #print(rufus)
 
 janina = Postac("Janina", 20, 400)
-Postac.fight(rufus, janina)
 
 tulipan = Przedmiot("Zielony tulipan zniszczenia", 5)
 rufus.daj_przedmiot(tulipan)
+
+Postac.fight(rufus, janina)
+
+
 
 def test_obrazenia():
     postac = Postac("Rafał", 5, 200)

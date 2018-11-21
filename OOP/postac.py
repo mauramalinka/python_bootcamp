@@ -35,6 +35,12 @@ class Postac:
     def moc_ataku(self):
         return randint(self.atak // 2, self.atak)
 
+    def atak_plus(self):
+        wynik = self.atak
+        for przedmiot in self.ekwipunek:
+            wynik += przedmiot.bonus
+            return wynik
+
     @staticmethod
     def fight(atakujacy, broniacy):
         while atakujacy.zdrowie > 0 and broniacy.zdrowie > 0:
@@ -67,7 +73,9 @@ janina = Postac("Janina", 20, 400)
 
 tulipan = Przedmiot("Zielony tulipan zniszczenia", 5)
 rufus.daj_przedmiot(tulipan)
+rufus.atak_plus()
 
+print(f"{rufus.atak_plus()}")
 Postac.fight(rufus, janina)
 
 

@@ -1,9 +1,7 @@
 class Przedmiot:
-
-    def __init__(self, nazwa, bonus):
+    def __init__(self, nazwa, bonus_do_ataku):
         self.nazwa = nazwa
-        self.bonus = bonus
+        self.bonus_atk = bonus_do_ataku
 
-    def pokaz_przedmiot(self):
-        print("Mam {self.nazwa}, co daje {self.bonus}")
-
+    def __str__(self):
+        return f"{self.nazwa}, {self.bonus_atk} do ataku"

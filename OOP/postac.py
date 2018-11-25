@@ -1,3 +1,5 @@
+#program do tworzenie postaci i walki
+
 from random import randint
 from przedmiot import Przedmiot
 

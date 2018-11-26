@@ -17,10 +17,19 @@ class Vector:
         nowy_y = self.y - other.y
         return Vector(nowy_x, nowy_y)
 
-    def __mul__(self, liczba):
-        nowy_x = liczba * self.x
-        nowy_y = liczba * self.y
-        return Vector(nowy_x, nowy_y)
+    def __mul__(self, other):
+        if not isinstance(other, Vector):
+            nowy_x = other * self.x
+            nowy_y = other * self.y
+            return Vector(nowy_x, nowy_y)
+        if isinstance(other, Vector):
+            skalar = self.x * other.x + self.y * other.y
+            return skalar
+
+    def __truediv__(self, liczba):
+            nowy_x = self.x / liczba
+            nowy_y = self.y / liczba
+            return Vector(nowy_x, nowy_y)
 
     def dlugosc_vector(self):
         d = (self.x ** 2 + self.y ** 2) ** (1 / 2)
@@ -50,9 +59,14 @@ print(f"------mnozenie przez liczbe---------")
 v5 = v1 * 10
 print(v5)
 
+print(f"------mnozenie skalarne---------")
+
+v10 = v1 * v2
+print(v10)
+
 print(f"--------dlugosc-------")
-v5.dlugosc_vector()
-print(f"{v5.dlugosc_vector()}")
+v4.dlugosc_vector()
+print(f"{v4.dlugosc_vector()}")
 
 print(f"------porownanie-------")
 
@@ -66,3 +80,7 @@ print(f"------porownanie2-------")
 v8 = Vector(10, 20)
 v9 = Vector(8, 13)
 print(v8 > v9)
+
+print(f"------dzielenie-------")
+
+print(v8 / 2)

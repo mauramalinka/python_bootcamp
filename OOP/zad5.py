@@ -1,27 +1,29 @@
 class CashMachine:
 
     def __init__(self):
-        self.money = []
+        self._money = []
 
-    def __str__(self):
-        return f"{self.money}"
-
+    @property
     def is_availabe(self):
-        return len(self.money) > 0
+        if self.money:
+            return True
+        return False
 
-    def put_banknot(self, lista = []):
-        for banknot in lista:
-            self.money.append(banknot)
+    def put_banknot(self, money):
+        self._money.extend(money)
 
-    def withdraw_money(self, lista):
-        lista = self.money
-        for banknot in lista:
-            self.money.append(banknot)
+    def withdraw_money(self, kwota):
+        self.money.sort
+        for x in self.money:
+             if x <= kwota:
+                 return x
+
+
+
 
 cash_machine = CashMachine()
 
 cash_machine.is_availabe()
-
 
 print(f"{cash_machine}")
 
@@ -30,3 +32,8 @@ cash_machine.put_banknot([100, 50, 100, 50])
 print(f"{cash_machine}")
 
 print(f"{cash_machine.is_availabe()}")
+
+cash_machine.withdraw_money(100)
+
+print(f"--------------")
+print(f"{cash_machine}")

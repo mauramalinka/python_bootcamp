@@ -33,17 +33,20 @@ class PremiumEmployee(Employee):
         self.bonus += kwota
 
     def pay_salary(self):
-        self.bonus = 0
         to_pay = super().pay_salary() + self.bonus
+        self.bonus = 0
         return to_pay
 
 employee = PremiumEmployee("Jan", 'Nowak', 100.0)
 
 
 
-employee.register_time(5)
-print(employee.pay_salary())
-employee.register_time(0)
-print(employee.pay_salary())
+# employee.register_time(5)
+# print(employee.pay_salary())
+# employee.register_time(0)
+# print(employee.pay_salary())
 employee.register_time(10)
+# print(employee.pay_salary())
+
+employee.give_bonus(1000)
 print(employee.pay_salary())

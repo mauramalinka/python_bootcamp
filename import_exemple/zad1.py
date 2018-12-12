@@ -1,32 +1,35 @@
 import json
-import sys
 
+obiekt = {"imie": "Jan", "wiek": 33}   #slownik
+print(json.dumps(obiekt))  #napis
 
+napis = '{"imie": "Jan", "wiek": 33}' #slownik
+print(type(json.loads(napis)))  #slownik
+
+print(json.loads(napis)["wiek"])  #zapytanie do slownika - zwroci wartosc dla key wiek = 33
+#loadS = czyta napis i wczytuje jego strukture
+#load = wczytuje jakis plik
+
+#ZADANIE nr 1
 
 try:
-    with open('emplo.json', "r") as f:
-        emplo = json.load(f)
+    with open("pracownicy.json", "r") as plik:
+        pracownicy = json.load(plik)
 except FileNotFoundError:
-    emplo = []
-do = input('Co chcesz zrobic: wybierz opcje dodaj - [d], wypisz - [w]')
+    pracownicy = []
 
-# class Pracownik():
-#     def __init__(self, imie, atak, zdrowie):
-#         self.imie = imie
-#         self.wiek = wiek
-#         self.pensja = pensja
-
-
-if do == "d":
-    imie = input('Podaj Imie')
-    wiek = int(input('Podaj wiek'))
-    pensja = float(input('Podaj pensje'))
-    rok_ur = int(input('Podaj rok ur'))
-    emplo.append({"imie" : imie, "wiek": wiek, "pensja": pensja})
-    with open("emplo.json", "w") as file:
-        json.dump(emplo, file)
-
-elif do == "w":
-    for nr, p in enumerate(emplo, 1):
-        print(f" - [{nr}] {p['imie']} {p['wiek']} {p['rok_ur']} {p['pensja']} PLN")
-
+op = input("Co chcesz zrobic? [d - dodaj, w - wypisz]: ")
+if op == 'd':
+    imie = input("Imie: ")
+    nazwisko = input("Nazwisko: ")
+    rok_ur = int(input("Rok urodzenia: "))
+    pensja = float(input("Pensja: "))
+    pracownicy.append({"imie": imie,
+                      "nazwisko": nazwisko,
+                      "rok urodzenia": rok_ur,
+                      "pensja": pensja})
+    with open("pracownicy.json", "w") as plik:     # CTRL + Q - podglad dokumentacji
+        json.dump(pracownicy, plik)
+elif op == 'w':
+    for nr, p in enumerate(pracownicy, 1):    #zwraca pare liczb w postaci tupli np (1, 2), zaczyna lczyc od 1
+        print(f"- [{nr}] {p['imie']} {p['nazwisko']} {p['rok urodzenia']} {p['pensja']} PLN")

@@ -19,6 +19,6 @@ def calculate(request, dzialanie, a , b):
             c = a / b
     elif dzialanie == 'mul':
         c = a * b
-    m = Math(calculate='dzialanie', a=a, b=b, c=c)
+    m = Math(calculate=dzialanie, a=a, b=b, c=c)
     m.save()
     return HttpResponse(f"Wynik = {c}")
